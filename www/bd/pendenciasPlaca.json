@@ -1,0 +1,46 @@
+[
+    {
+        "titular": "Gustavo Silva",
+        "documento": "42.641.256/0001-28",
+        "placa":"ABC-1234",
+        "pendencias": [
+            {
+                "data": "10/12/2015",
+                "tipo": "IPVA",
+                "valor": 122.43
+            },
+            {
+                "data": "09/16/2016",
+                "tipo": "Licenciamento",
+                "valor": 322.54
+            }
+        ]
+    },
+    {
+        "titular": "Ferran Gonzalez",
+        "documento": "739.446.701-59",
+        "placa":"DFE-4321",
+        "pendencias": [
+            {
+                "data": "15/08/2016",
+                "tipo": "IPVA",
+                "valor": 122.2
+            },
+            {
+                "data": "03/05/2016",
+                "tipo": "Licenciamento",
+                "valor": 12.54
+            },
+            {
+                "data": "09/01/2016",
+                "tipo": "Licenciamento",
+                "valor": 32.54
+            },
+            {
+                "data": "11/16/2016",
+                "tipo": "Licenciamento",
+                "valor": 54.54
+            }
+        ]
+    }
+]
