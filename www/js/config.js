@@ -1,8 +1,8 @@
 angular
     .module('fisgo')
-    .config(config);
+    .config(Config);
 
-function config($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
+function Config($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
 
     $ionicConfigProvider.views.maxCache(0);
 

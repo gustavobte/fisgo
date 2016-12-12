@@ -10,21 +10,18 @@
   function LoginController($location) {
     var vm = this;
 
-    vm.user = '';
-    vm.pass = '';
+    vm.username = '';
+    vm.password = '';
 
     vm.login = function () {
-
-      if (vm.user == '123' && vm.pass == '123') {
+      if (vm.username == '123' && vm.password == '123') {
         $location.path('/home');
         console.log('Logado')
       } else {
         console.log('Usuário e/ou senha incorreto(s)');
       }
     };
-
   }
-
 })();
 
 

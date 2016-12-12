@@ -1,5 +1,5 @@
 <ion-view view-title="Login" align-title="left">
-  <ion-content style="background: url(img/login.jpg) center; background-size: cover;">
+  <ion-content class="login">
     <div class="hero no-header flat">
       <div class="content">
         <div class="app-icon"></div>
@@ -7,9 +7,9 @@
       </div>
     </div>
     <div class="list">
-      <ion-md-input placeholder="Username" highlight-color="balanced" type="text" ng-model="vm.user"></ion-md-input>
+      <ion-md-input placeholder="Username" highlight-color="balanced" type="text" ng-model="vm.username"></ion-md-input>
       <br>
-      <ion-md-input placeholder="Password" highlight-color="energized" type="password" ng-model="vm.pass"></ion-md-input>
+      <ion-md-input placeholder="Password" highlight-color="energized" type="password" ng-model="vm.password"></ion-md-input>
     </div>
     <div class="padding">
       <button  ng-click="vm.login()" class="button button-full button-positive ink">Login</button>
