@@ -1,27 +1,31 @@
-(function () {
-  'use strict';
+(function() {
+    'use strict';
 
-  angular
-    .module('fisgo')
-    .controller('LoginController', LoginController);
+    angular
+        .module('fisgo')
+        .controller('LoginController', LoginController);
 
-  LoginController.$inject = ['$location'];
+    LoginController.$inject = ['$location'];
 
-  function LoginController($location) {
-    var vm = this;
+    function LoginController($location) {
+        var vm = this;
 
-    vm.username = '';
-    vm.password = '';
+        vm.username = '';
+        vm.password = '';
 
-    vm.login = function () {
-      if (vm.username == '123' && vm.password == '123') {
-        $location.path('/home');
-        console.log('Logado')
-      } else {
-        console.log('Usuário e/ou senha incorreto(s)');
-      }
-    };
-  }
+        vm.login = function() {
+            if (vm.username == '123' && vm.password == '123') {
+                $location.path('/home');
+                console.log('Logado')
+            } else {
+                console.log('Usuário e/ou senha incorreto(s)');
+            }
+        };
+
+        vm.telaLeitor = function() {
+            $location.path('/leitor');
+        };
+    }
 })();
 
 
