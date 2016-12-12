@@ -1,3 +1,5 @@
+
+
 /* Login
 ==================================*/
 .app-icon {
@@ -8,4 +10,22 @@
     height: 125px;
     margin: 0 auto;
     width: 125px;
+}
+.app-icon-user {
+  background-color: #fff;
+  background: url('/img/user.png') center;
+  background-size: cover;
+  border-radius: 50%;
+  height: 55px;
+  margin: 0 auto;
+  width: 55px;
+  padding-left: 10%;
+}
+
+.name-user {
+  font-size: 13px;
+  position: absolute;
+  padding-left: 40%;
+
+
 }

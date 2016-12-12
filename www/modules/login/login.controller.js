@@ -10,12 +10,13 @@
   function LoginController($location) {
     var vm = this;
 
-    vm.username = '';
-    vm.password = '';
+
+    vm.username = '123';
+    vm.password = '123';
 
     vm.login = function () {
       if (vm.username == '123' && vm.password == '123') {
-        $location.path('/home');
+        $location.path('/app/home');
         console.log('Logado')
       } else {
         console.log('Usuário e/ou senha incorreto(s)');

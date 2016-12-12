@@ -1,5 +1,42 @@
-<ion-view view-title="Search">
-  <ion-content>
-    <h1>Search</h1>
-  </ion-content>
-</ion-view>
+<ion-side-menus enable-menu-with-back-views="false">
+  <ion-side-menu-content>
+    <ion-nav-bar class="bar-stable">
+
+      <ion-nav-back-button class="no-text">
+      </ion-nav-back-button>
+
+      <ion-nav-buttons side="right">
+        <button class="button button-icon button-clear ion-android-more-vertical" menu-toggle="right">
+        </button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-nav-view name="menuContent"></ion-nav-view>
+  </ion-side-menu-content>
+
+  <ion-side-menu side="right">
+    <ion-header-bar class="dark-bg expanded">
+      <span class="avatar" style="background-size: auto;"></span>
+      <h2>FISGO</h2>
+    </ion-header-bar>
+    <ion-content class="stable-bg has-expanded-header">
+      <ion-list>
+        <ion-item nav-clear menu-close ui-sref="app.activity">
+          Activity
+        </ion-item>
+        <ion-item nav-clear menu-close ui-sref="app.login">
+          Login
+        </ion-item>
+        <ion-item nav-clear menu-close ui-sref="app.profile">
+          Profile
+        </ion-item>
+        <ion-item nav-clear menu-close ui-sref="app.friends">
+          Friends
+        </ion-item>
+        <ion-item nav-clear menu-close ui-sref="app.gallery">
+          Gallery
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>
+
