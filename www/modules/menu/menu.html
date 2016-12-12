@@ -1,40 +1,5 @@
-<ion-side-menus enable-menu-with-back-views="true">
-  <ion-side-menu-content>
-    <ion-nav-bar class="bar-positive" ng-class="{expanded: isExpanded, 'has-header-fab-left': hasHeaderFabLeft, 'has-header-fab-right': hasHeaderFabRight}" align-title="left">
-      <ion-nav-back-button class="no-text">
-      </ion-nav-back-button>
-      <ion-nav-buttons side="right">
-        <button class="button button-icon button-clear ion-android-more-vertical" menu-toggle="right">
-        </button>
-      </ion-nav-buttons>
-    </ion-nav-bar>
-    <ion-nav-view name="fabContent"></ion-nav-view>
-    <ion-nav-view name="menuContent" ng-class="{expanded: isExpanded}" ></ion-nav-view>
-  </ion-side-menu-content>
-  <ion-side-menu side="right">
-    <ion-header-bar class="calm-bg expanded" style="background-image:url('img/login.jpg')">
-      <div class="app-icon animated bounceInDown"></div>
-      <h2>Menu</h2>
-
-    </ion-header-bar>
-    <ion-content class="stable-bg has-expanded-header">
-      <ion-list>
-        <ion-item nav-clear menu-close ui-sref="app.login">
-          Home
-        </ion-item>
-        <ion-item nav-clear menu-close ui-sref="app.profile">
-          Dicas
-        </ion-item>
-        <ion-item nav-clear menu-close ui-sref="app.dicas1">
-          Enviar Dica
-        </ion-item>
-        <ion-item nav-clear menu-close ui-sref="">
-          Sobre
-        </ion-item>
-        <ion-item nav-clear menu-close ui-sref="">
-          Sair
-        </ion-item>
-      </ion-list>
-    </ion-content>
-  </ion-side-menu>
-</ion-side-menus>
+<ion-view view-title="Search">
+  <ion-content>
+    <h1>Search</h1>
+  </ion-content>
+</ion-view>
