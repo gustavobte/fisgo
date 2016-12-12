@@ -1,17 +1,22 @@
-angular
-    .module('fisgo', ['ionic'])
+(function () {
+    'use strict';
 
-    .run(function($ionicPlatform) {
-        $ionicPlatform.ready(function() {
-            if (window.cordova && window.cordova.plugins.Keyboard) {
-                // Hide the accessory bar by default
-                cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+    angular
+        .module('fisgo', ['ionic'])
 
-                // Nicer keyboard experience.
-                cordova.plugins.Keyboard.disableScroll(true);
-            }
-            if (window.StatusBar) {
-                StatusBar.styleDefault();
-            }
-        })
-    });
+        .run(function ($ionicPlatform) {
+            $ionicPlatform.ready(function () {
+                if (window.cordova && window.cordova.plugins.Keyboard) {
+                    // Hide the accessory bar by default
+                    cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+
+                    // Nicer keyboard experience.
+                    cordova.plugins.Keyboard.disableScroll(true);
+                }
+                if (window.StatusBar) {
+                    StatusBar.styleDefault();
+                }
+            })
+        });
+
+})();
