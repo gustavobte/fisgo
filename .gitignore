@@ -1,5 +1,7 @@
 platforms/
 plugins/
+res/
+resources/
 
 ### Node ###
 # Logs
