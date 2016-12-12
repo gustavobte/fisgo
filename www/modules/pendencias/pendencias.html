@@ -1,1 +1,15 @@
-pendencias.html page...
+<input ng-model="vm.numDocumento"></input>
+<button ng-click="vm.listaNFES()">Listar NFES</button>
+<br/>
+
+<input ng-model="vm.numDocumento"></input>
+<button ng-click="vm.buscaPendenciasCNPJ()">Busca pendencias CNPJ</button>
+<br/>
+
+<input ng-model="vm.numDocumento"></input>
+<button ng-click="vm.buscaPendenciasPlaca()">Busca pendencias Placa</button>
+<hr/>
+<h2>Resultado</h2>
+<span>{{vm.listaNFES}}</span>
+<span>{{vm.listaPendenciasCNPJ}}</span>
+<span>{{vm.listaPendenciasPlaca}}</span>

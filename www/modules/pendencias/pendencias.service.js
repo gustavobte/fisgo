@@ -12,9 +12,9 @@
         this.buscaPendenciasCNPJ = buscaPendenciasCNPJ;
         this.buscaPendenciasPlaca = buscaPendenciasPlaca;
 
-        var nfes = '/bd/nfes.json';
-        var pendenciasCNPJ = '/bd/pendenciasCNPJ.json';
-        var pendenciasPlaca = '/bd/pendenciasPlaca.|json';
+        var nfes = 'bd/nfes.json';
+        var pendenciasCNPJ = 'bd/pendenciasCNPJ.json';
+        var pendenciasPlaca = 'bd/pendenciasPlaca.json';
 
         function buscaNFES(numDocumento) {
             var deferred = $q.defer();

@@ -23,7 +23,7 @@
             });
         };
 
-        vm.listaPendenciasCNPJ = function () {
+        vm.buscaPendenciasCNPJ = function () {
             PendenciasService.buscaPendenciasCNPJ(vm.numDocumento).then(function (result) {
                 vm.listaPendenciasCNPJ = result;
             }, function (response) {
@@ -31,7 +31,7 @@
             });
         };
 
-        vm.listaPendenciasPlaca = function () {
+        vm.buscaPendenciasPlaca = function () {
             PendenciasService.buscaPendenciasPlaca(vm.numDocumento).then(function (result) {
                 vm.listaPendenciasPlaca = result;
             }, function (response) {
