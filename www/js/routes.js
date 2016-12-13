@@ -15,28 +15,26 @@ function Config($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
             controllerAs: 'vm'
         })
 
-      .state('app.login', {
-        url: '/login',
-        views: {
-          'menuContent': {
+        .state('login', {
+            url: '/login',
             templateUrl: 'modules/login/login.html',
             controller: 'LoginController',
             controllerAs: 'vm'
-          }
-        }
-      })
+        })
 
-      .state('app.home', {
-        url: '/home',
-        views: {
-          'menuContent': {
+        .state('home', {
+            url: '/home',
             templateUrl: 'modules/home/home.html',
             controller: 'HomeController',
             controllerAs: 'vm'
-          }
-        }
-      });
+        })
 
+        .state('pendencias', {
+            url: '/pendencias',
+            templateUrl: 'modules/pendencias/pendencias.html',
+            controller: 'PendenciasController',
+            controllerAs: 'vm'
+        })
 
-    $urlRouterProvider.otherwise('/app/login');
+    $urlRouterProvider.otherwise('/login');
 }
