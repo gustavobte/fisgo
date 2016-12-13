@@ -22,6 +22,10 @@
         console.log('Usuário e/ou senha incorreto(s)');
       }
     };
+
+    vm.telaLeitor = function () {
+      $location.path('/app/leitor');
+    };
   }
 })();
 
