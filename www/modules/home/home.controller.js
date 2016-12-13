@@ -28,6 +28,10 @@
 
     vm.buscaAtuacoes();
 
+    vm.newAtuacao = function () {
+      $location.path('/app/autuacao');
+    };
+
   }
 })();
 

@@ -1,7 +1,10 @@
 <ion-view view-title="Perfil">
+  <ion-toolbar color="secondary">
+    <ion-title>Toolbar</ion-title>
+  </ion-toolbar>
   <ion-content>
     <div class="fixed-action-btn" style="top: 15%; right: 3%; z-index: 599;">
-      <a class="btn-floating btn-large waves-effect waves-light red" onclick="Materialize.toast('Aqui nova Atuação! ' , 4000)"><i class="material-icons">add</i></a>
+      <a class="btn-floating btn-large waves-effect waves-light red" ng-click="vm.newAtuacao()"><i class="material-icons">add</i></a>
 
     </div>
     <div class="light static fd-user" style="">

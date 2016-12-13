@@ -59,5 +59,16 @@ function Config($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
             }
         })
 
+      .state('app.autuacao', {
+        url: '/autuacao',
+        views: {
+          'menuContent': {
+            templateUrl: 'modules/autuacao/autuacao.html',
+            controller: 'AutuacaoController',
+            controllerAs: 'vm'
+          }
+        }
+      })
+
     $urlRouterProvider.otherwise('/app/login');
 }
