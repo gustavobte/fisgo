@@ -1,6 +1,6 @@
 
     angular
-        .module('fisgo', ['ionic', 'ionMdInput', 'ui.materialize'])
+        .module('fisgo', ['ionic','ionMdInput'])
         .run(Run);
 
     function Run($ionicPlatform) {
