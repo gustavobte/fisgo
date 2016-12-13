@@ -1,18 +1,25 @@
 <ion-view view-title="Login" align-title="center" hide-nav-bar="true">
   <ion-content class="login">
+    <br><br><br>
     <div class="hero no-header flat">
       <div class="content">
         <div class="app-icon"></div>
-        <h1>FISGO</h1>
+        <h1 class="center-align">FISGO</h1>
       </div>
     </div>
-    <div class="list">
+    <div class="fd-login">
+      <br><br>
       <input placeholder="Username" highlight-color="balanced" type="text" ng-model="vm.username"></input>
       <br>
       <input placeholder="Password" highlight-color="energized" type="password" ng-model="vm.password"></input>
+      <br><br>
     </div>
     <div class="padding">
       <button  ng-click="vm.login()" class="button button-full button-positive ink">Login</button>
+    </div>
+    <div class="input-field col s6">
+      <input id="last_name" type="text" class="validate">
+      <label for="last_name">Last Name</label>
     </div>
 
   </ion-content>

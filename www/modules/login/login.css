@@ -2,3 +2,8 @@
     background: url(/img/login.jpg) center;
     background-size: cover;
 }
+.fd-login {
+  background-color: white;
+  opacity: 0.9;
+  filter: alpha(opacity=20);
+}
