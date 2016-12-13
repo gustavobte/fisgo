@@ -7,12 +7,15 @@
       </div>
     </div>
     <div class="list">
-      <ion-md-input placeholder="Username" highlight-color="balanced" type="text" ng-model="vm.username"></ion-md-input>
-      <br>
-      <ion-md-input placeholder="Password" highlight-color="energized" type="password" ng-model="vm.password"></ion-md-input>
+      <form name="list">
+        <input placeholder="Username" name="username" highlight-color="balanced" type="text" ng-model="vm.username" ui-br-cpf-mask>
+        <span>{{list.username.$invalid ? 'CPF Incorreto' : 'CPF Correto'}}</span>
+        <br/>
+        <input placeholder="Password" highlight-color="energized" type="password" ng-model="vm.password">
+      </form>
     </div>
     <div class="padding">
-      <button  ng-click="vm.login()" class="button button-full button-positive ink">Login</button>
+      <button ng-click="vm.login()" class="button button-full button-positive ink" ng-disabled="list.username.$invalid || (vm.username == '' || vm.password == '')">Login</button>
     </div>
 
   </ion-content>

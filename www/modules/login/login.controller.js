@@ -14,7 +14,7 @@
     vm.password = '';
 
     vm.login = function () {
-      if (vm.username == '123' && vm.password == '123') {
+      if (vm.username == '15261834392' && vm.password == '15261834392') {
         $location.path('/home');
         console.log('Logado')
       } else {
