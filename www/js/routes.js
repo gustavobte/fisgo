@@ -15,26 +15,38 @@ function Config($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
             controllerAs: 'vm'
         })
 
-        .state('login', {
+        .state('app.login', {
             url: '/login',
-            templateUrl: 'modules/login/login.html',
-            controller: 'LoginController',
-            controllerAs: 'vm'
+            views: {
+                'menuContent': {
+                    templateUrl: 'modules/login/login.html',
+                    controller: 'LoginController',
+                    controllerAs: 'vm'
+                }
+            }
         })
 
-        .state('home', {
+        .state('app.home', {
             url: '/home',
-            templateUrl: 'modules/home/home.html',
-            controller: 'HomeController',
-            controllerAs: 'vm'
+            views: {
+                'menuContent': {
+                    templateUrl: 'modules/home/home.html',
+                    controller: 'HomeController',
+                    controllerAs: 'vm'
+                }
+            }
         })
 
-        .state('pendencias', {
+        .state('app.pendencias', {
             url: '/pendencias',
-            templateUrl: 'modules/pendencias/pendencias.html',
-            controller: 'PendenciasController',
-            controllerAs: 'vm'
+            views: {
+                'menuContent': {
+                    templateUrl: 'modules/pendencias/pendencias.html',
+                    controller: 'PendenciasController',
+                    controllerAs: 'vm'
+                }
+            }
         })
 
-    $urlRouterProvider.otherwise('/login');
+    $urlRouterProvider.otherwise('/app/login');
 }
