@@ -16,7 +16,7 @@
 
     vm.login = function () {
       if (vm.username == '123' && vm.password == '123') {
-        $location.path('/app/home');
+        $location.path('/home');
         console.log('Logado')
       } else {
         console.log('Usuário e/ou senha incorreto(s)');
