@@ -1,0 +1,23 @@
+[
+    {
+        "id": "1",
+        "autuado":"INDRA ISL",
+        "documento": "42.641.256/0001-28",
+        "fiscal": "Ferran Gonzalez",
+        "data": "11/12/2016"
+    },
+    {
+        "id": "2",
+        "autuado": "Gustavo Rosa Paiva",
+        "documento": "DOB-1234",
+        "fiscal": "Julio Pessoa",
+        "data": "12/12/2016"
+    },
+    {
+        "id": "3",
+        "autuado": "Lucas Rosa Paiva",
+        "documento": "DOB-6548",
+        "fiscal": "Ferran Gonzalez",
+        "data": "12/12/2016"
+    }
+]

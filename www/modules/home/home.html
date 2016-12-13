@@ -1,4 +1,4 @@
-<ion-view view-title="Perfil" >
+<ion-view view-title="Perfil">
   <ion-content>
     <div class="fixed-action-btn" style="top: 15%; right: 3%; z-index: 599;">
       <a class="btn-floating btn-large waves-effect waves-light red" onclick="Materialize.toast('Aqui nova Atuação! ' , 4000)"><i class="material-icons">add</i></a>
@@ -6,70 +6,30 @@
     </div>
     <div class="light static fd-user" style="">
       <div class="app-icon-user"></div>
-        <h3 class="center-align name-user">Jose Arnaldo</h3>
-      <h1 class="center-align name-user">CPF:041.344.051-66</h1>
+      <h3 class="center-align name-user">Jose Arnaldo</h3>
+      <h1 class="center-align name-user">CPF: 041.344.051-66</h1>
     </div>
 
     <div class="collection">
       <a class="collection-item"><span class="badge">Total (15)</span>Historico de Autuações</a>
-        <!--<input type="date" placeholder="Filtrar Data" class="datepicker">-->
+      <!--<input type="date" placeholder="Filtrar Data" class="datepicker">-->
     </div>
-
-          <div class="card center-align blue lighten-5" style="width: 340px">
-            <div class="chip " >
-              Ocorrencia N°: 54554
-            </div>
-            <div class="card-content">
-              <div class="">
-                Empresa: INDRA SERVIÇOS LTDA <br>
-                Data: 21/02/2016
-              </div>
-            </div>
-            <div class="card-read-more">
-              <a class="btn btn-link btn-block indigo darken-3">
+    <div ng-repeat="atuacao in vm.listaAtuacoes">
+      <div class="card center-align blue lighten-5" style="width: 340px">
+        <div class="chip ">
+          N°: {{atuacao.id}}
+        </div>
+        <div class="card-content">
+          <div class="">
+            Autuado: {{atuacao.autuado}} <br> Data: {{atuacao.data}}
+          </div>
+        </div>
+        <div class="card-read-more">
+          <a class="btn btn-link btn-block indigo darken-3">
                + Informações
               </a>
-            </div>
-          </div>
-
-      <div class="card center-align blue lighten-5" style="width: 340px">
-        <div class="chip " >
-          Ocorrencia N°: 54554
-        </div>
-        <div class="card-content">
-          <div class="">
-            Empresa: INDRA SERVIÇOS LTDA <br>
-            Data: 21/02/2016
-          </div>
-        </div>
-        <div class="card-read-more">
-          <a class="btn btn-link btn-block indigo darken-3">
-            + Informações
-          </a>
         </div>
       </div>
-
-      <div class="card center-align blue lighten-5" style="width: 340px">
-        <div class="chip " >
-          Ocorrencia N°: 54554
-        </div>
-        <div class="card-content">
-          <div class="">
-            Empresa: INDRA SERVIÇOS LTDA <br>
-            Data: 21/02/2016
-          </div>
-        </div>
-        <div class="card-read-more">
-          <a class="btn btn-link btn-block indigo darken-3">
-            + Informações
-          </a>
-        </div>
-      </div>
-
-
-
-
+    </div>
   </ion-content>
-
 </ion-view>
-

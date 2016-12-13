@@ -11,10 +11,12 @@
         this.buscaNFES = buscaNFES;
         this.buscaPendenciasCNPJ = buscaPendenciasCNPJ;
         this.buscaPendenciasPlaca = buscaPendenciasPlaca;
+        this.buscaAtuacoes = buscaAtuacoes;
 
         var nfes = 'bd/nfes.json';
         var pendenciasCNPJ = 'bd/pendenciasCNPJ.json';
         var pendenciasPlaca = 'bd/pendenciasPlaca.json';
+        var atuacoes = 'bd/atuacoes.json';
 
         function buscaNFES(numDocumento) {
             var deferred = $q.defer();
@@ -40,6 +42,16 @@
             var deferred = $q.defer();
             // TODO: filtrar por número de documento quando fizer integração com banco de dados
             $http.get(pendenciasPlaca).then(function (data) {
+                deferred.resolve(data);
+            });
+
+            return deferred.promise;
+        };
+
+        function buscaAtuacoes(cpfFiscal) {
+            var deferred = $q.defer();
+            // TODO: filtrar por número de documento quando fizer integração com banco de dados
+            $http.get(atuacoes).then(function (data) {
                 deferred.resolve(data);
             });
 
