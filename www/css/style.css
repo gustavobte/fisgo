@@ -1,3 +1,5 @@
+
+
 /* Login
 ==================================*/
 .app-icon {
@@ -9,3 +11,25 @@
     margin: 0 auto;
     width: 125px;
 }
+.app-icon-user {
+  background-color: #fff;
+  background: url('/img/user.png') center;
+  background-size: cover;
+  border-radius: 50%;
+  height: 70px;
+  margin: 0 auto;
+  width: 70px;
+  z-index: 1;
+}
+.fd-user {
+  background: url('/img/fd_login.jpg') center;
+  height: 180px;
+  padding-top: 15px;
+
+}
+
+.name-user {
+  font-size: 19px;
+  font-style: normal;
+}
+

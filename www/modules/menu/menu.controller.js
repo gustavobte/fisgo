@@ -3,11 +3,11 @@
 
   angular
     .module('fisgo')
-    .controller('AppController', AppCtrl);
+    .controller('AppController', AppController);
 
-  AppCtrl.$inject = ['$scope', '$ionicModal', '$timeout'];
+  AppController.$inject = ['$scope', '$ionicModal', '$timeout'];
 
-  function AppCtrl($scope, $ionicModal, $timeout) {
+  function AppController($scope, $ionicModal, $timeout) {
     var vm = this;
 
 
