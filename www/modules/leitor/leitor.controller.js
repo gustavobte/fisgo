@@ -11,7 +11,6 @@
         var vm = this;
 
         vm.resultadoLeitor = ''
-        vm.error = 'sem erro';
 
         vm.leitorBarcode = function () {
             cordova.plugins.barcodeScanner.scan(
