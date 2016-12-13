@@ -1,8 +1,6 @@
-(function () {
-    'use strict';
 
     angular
-        .module('fisgo', ['ionic', 'ionic-material', 'ionMdInput'])
+        .module('fisgo', ['ionic', 'ionMdInput', 'ui.materialize'])
         .run(Run);
 
     function Run($ionicPlatform) {
@@ -21,5 +19,3 @@
 
         })
     }
-
-})();
