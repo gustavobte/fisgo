@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('fisgo', ['ionic', 'ionic-material', 'ionMdInput'])
+        .module('fisgo', ['ionic'])
         .run(Run);
 
     function Run($ionicPlatform) {
