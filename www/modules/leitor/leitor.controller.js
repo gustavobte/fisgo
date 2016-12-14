@@ -43,13 +43,25 @@
                     "formats": "QR_CODE,PDF_417"
                 }
             );
-        };
+        }
+
+        vm.existe = function(){
+            return LeitorService.exist(vm.resultadoLeitor);
+        }
+
+        vm.alertaExiste = function(){
+            Materialize.toast('Alerta', 0,'',function(){alert('Este documento já foi adicionado')})
+        }
 
         vm.salvar = function () {
-            vm.resultadoLeitor.tipo = vm.defineTipo(vm.resultadoLeitor.dados);
-            LeitorService.addItem(vm.resultadoLeitor);
-            vm.init();
-        };
+            if(!vm.existe()){
+                vm.resultadoLeitor.tipo = vm.defineTipo(vm.resultadoLeitor.dados);
+                LeitorService.addItem(vm.resultadoLeitor);
+                vm.init();
+            }else{
+                vm.alertaExiste();
+            }
+        }
 
         vm.init();
     }

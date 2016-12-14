@@ -21,7 +21,7 @@
       <tbody>
         <tr ng-repeat="item in vm.items">
           <td class="center-align tabela">{{item.tipo}}</td>
-          <td class="center-align ">{{item.dados}}</td>
+          <td class="center-align ">{{item.tipo == 'NF-e' ? '. . .':''}} {{item.dados.slice(-8)}}</td>
           <td class="center-align"><img ng-src="/img/{{item.status}}.svg" alt="" class="imgAlert"></td>
         </tr>
       </tbody>
