@@ -6,19 +6,24 @@
         .service('LeitorService', LeitorService);
 
     function LeitorService() {
-        this.setResultadoLeitor = setResultadoLeitor;
-        this.getResultadoLeitor = getResultadoLeitor;
+        this.addItem = addItem;
+        this.removeItem = removeItem;
+        this.getItems = getItems;
 
         var vm = this;
 
-        vm.resultadoLeitor = '';
+        vm.items = [];
 
-        function setResultadoLeitor(resultadoLeitor) {
-            vm.resultadoLeitor = resultadoLeitor;
+        function addItem(resultadoLeitor) {
+            vm.items = vm.items.concat(resultadoLeitor);
         }
 
-        function getResultadoLeitor() {
-            return vm.resultadoLeitor;
+        function removeItem(resultadoLeitor) {
+            vm.items.pop(resultadoLeitor);
+        }
+
+        function getItems() {
+            return vm.items;
         }
     }
 })();

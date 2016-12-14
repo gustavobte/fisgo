@@ -10,8 +10,6 @@
     function LeitorController(LeitorService) {
         var vm = this;
 
-        vm.resultadoLeitor = ''
-
         vm.leitorBarcode = function () {
             cordova.plugins.barcodeScanner.scan(
                 function (result) {
@@ -24,16 +22,16 @@
                     "preferFrontCamera": true,
                     "showFlipCameraButton": true,
                     "showTorchButton": true,
-                    "prompt": "Por favor, centralize o código de barras", // supported on Android only
-                    "formats": "QR_CODE,PDF_417" // default: all but PDF_417 and RSS_EXPANDED
+                    "prompt": "Por favor, centralize o código de barras",
+                    "formats": "QR_CODE,PDF_417"
                 }
             );
         };
 
         vm.salvar = function () {
-            LeitorService.setResultadoLeitor(vm.resultadoLeitor)
+            LeitorService.addItem(vm.resultadoLeitor);
+            vm.resultadoLeitor = '';
         };
-
     }
 })();
 
