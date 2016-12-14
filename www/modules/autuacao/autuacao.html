@@ -8,7 +8,7 @@
         <a class="waves-effect waves-light btn-large blue darken-2" ng-click="vm.telaLeitor()"><i class="material-icons left">playlist_add</i>Adicionar Documento</a>
       </div>
     </div>
-    
+
     <table class="striped bordered highlight">
       <thead>
         <tr>
@@ -18,9 +18,9 @@
         </tr>
       </thead>
 
-      <tbody ng-repeat="item in vm.items">
-        <tr>
-          <td class="center-align tabela">Veiculo</td>
+      <tbody>
+        <tr ng-repeat="item in vm.items">
+          <td class="center-align tabela">{{item.tipo}}</td>
           <td class="center-align ">{{item.dados}}</td>
           <td class="center-align"><img ng-src="/img/{{item.status}}.svg" alt="" class="imgAlert"></td>
         </tr>

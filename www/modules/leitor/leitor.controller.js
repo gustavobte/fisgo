@@ -10,7 +10,22 @@
     function LeitorController(LeitorService) {
         var vm = this;
 
-        vm.resultadoLeitor = {"status": "alerta", "dados":""};
+        vm.init = function(){
+            vm.resultadoLeitor = {"tipo":"","status": "alerta", "dados":""};
+        }
+
+        vm.defineTipo = function(valor){
+            var Rplaca = /[A-Za-z]{3}-?\d{4}/;
+            var Rnfe = /\d{44}/
+
+            if(Rnfe.test(valor)){
+                return 'NF-e';
+            }else if(Rplaca.test(valor)){
+                return 'Veiculo';
+            }else{
+                return 'desconhecido';
+            }
+        }
 
         vm.leitorBarcode = function () {
             cordova.plugins.barcodeScanner.scan(
@@ -31,9 +46,12 @@
         };
 
         vm.salvar = function () {
+            vm.resultadoLeitor.tipo = vm.defineTipo(vm.resultadoLeitor.dados);
             LeitorService.addItem(vm.resultadoLeitor);
-            vm.resultadoLeitor = '';
+            vm.init();
         };
+
+        vm.init();
     }
 })();
 
