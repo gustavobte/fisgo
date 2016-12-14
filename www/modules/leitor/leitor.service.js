@@ -20,5 +20,7 @@
         function getResultadoLeitor() {
             return vm.resultadoLeitor;
         }
+
+
     }
 })();

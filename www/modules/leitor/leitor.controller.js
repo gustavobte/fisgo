@@ -34,6 +34,10 @@
             LeitorService.setResultadoLeitor(vm.resultadoLeitor)
         };
 
+        vm.telaAutuacao = function () {
+          $location.path('/app/autuacao');
+        };
+
     }
 })();
 

@@ -1,0 +1,9 @@
+.tabela{
+  height: 35px;
+}
+.imgAlert{
+  width: 25px;
+  height: 25px;
+  position: static;
+ border-bottom: 5px;
+}

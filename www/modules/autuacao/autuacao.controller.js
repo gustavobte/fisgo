@@ -10,6 +10,9 @@
   function AutuacaoController($location) {
     var vm = this;
 
+    vm.telaLeitor = function () {
+      $location.path('/app/leitor');
+    };
 
   }
 })();
