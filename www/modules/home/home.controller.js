@@ -5,9 +5,9 @@
     .module('fisgo')
     .controller('HomeController', HomeController);
 
-  HomeController.$inject = ['$location', '$scope', "$ionicModal", "$ionicPopover", "$timeout", "PendenciasService"];
+  HomeController.$inject = ['$location', '$scope', "$ionicModal", "$ionicPopover", "$timeout", "OcorrenciasService"];
 
-  function HomeController($location, $scope, $ionicModal, $ionicPopover, $timeout, PendenciasService) {
+  function HomeController($location, $scope, $ionicModal, $ionicPopover, $timeout, OcorrenciasService) {
     var vm = this;
 
     vm.listaAtuacoes = [];
@@ -19,7 +19,7 @@
     });
 
     vm.buscaAtuacoes = function () {
-      PendenciasService.buscaAtuacoes(vm.cpfFiscal).then(function (result) {
+      OcorrenciasService.buscaAtuacoes(vm.cpfFiscal).then(function (result) {
         vm.listaAtuacoes = result.data;
       }, function (response) {
         console.log("error: " + response);
