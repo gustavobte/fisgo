@@ -37,12 +37,12 @@ function Config($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
             }
         })
 
-        .state('app.pendencias', {
-            url: '/pendencias',
+        .state('app.ocorrencias', {
+            url: '/ocorrencias',
             views: {
                 'menuContent': {
-                    templateUrl: 'modules/pendencias/pendencias.html',
-                    controller: 'PendenciasController',
+                    templateUrl: 'modules/ocorrencias/ocorrencias.html',
+                    controller: 'OcorrenciasController',
                     controllerAs: 'vm'
                 }
             }
