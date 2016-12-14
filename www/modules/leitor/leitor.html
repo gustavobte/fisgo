@@ -18,9 +18,9 @@
     </div>
   </div>
   <div class="col s12 ">
-    <button class="button button-full button-positive ink" ng-click="vm.leitorBarcode()">Adicionar Documento</button>
+    <button class="button button-full button-positive ink" ng-click="vm.leitorBarcode()">Ler código</button>
   </div>
-  <button class="button button-full button-positive ink" ng-click="vm.salvar()">Salvar</button>
+  <button class="button button-full button-positive ink" ng-click="vm.salvar()" ng-disabled="!vm.resultadoLeitor.dados">Salvar</button>
 
 </ion-content>
 </ion-view>
