@@ -1,7 +1,27 @@
-<ion-view view-title="Autuação - N°: 50504">
-  <ion-content>
-    <input ng-model="vm.resultadoLeitor.dados" />
-    <button ng-click="vm.leitorBarcode()">Leer codigo</button>
-    <button ng-click="vm.salvar()">Salvar</button>
-  </ion-content>
+<ion-view view-title="Autuação - N°: 50504"  >
+<ion-content class="fdLeitor">
+
+    <div class="row" >
+      <div class="grid-example col s12 m6 ">
+        <span class="flow-text">
+
+<div class="app-icon-barcode"></div>
+
+        </span>
+      </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col s12">
+      <input ng-model="vm.resultadoLeitor" placeholder="Placa/NF"/>
+    </div>
+  </div>
+  <div class="col s12 ">
+    <button class="button button-full button-positive ink" ng-click="vm.leitorBarcode()">Adicionar Documento</button>
+  </div>
+  <button class="button button-full button-positive ink" ng-click="vm.salvar()">Salvar</button>
+
+</ion-content>
 </ion-view>
+
