@@ -8,50 +8,28 @@
         <a class="waves-effect waves-light btn-large blue darken-2" ng-click="vm.telaLeitor()"><i class="material-icons left">playlist_add</i>Adicionar Documento</a>
       </div>
     </div>
-    <br><br>
 
     <table class="striped bordered highlight">
       <thead>
-      <tr>
-        <th data-field="id" class="center-align ">Tipo</th>
-        <th data-field="name" class="center-align">Identificação</th>
-        <th data-field="price" class="center-align" >Verificação</th>
-      </tr>
+        <tr>
+          <th data-field="id" class="center-align ">Tipo</th>
+          <th data-field="name" class="center-align">Identificação</th>
+          <th data-field="price" class="center-align">Verificação</th>
+        </tr>
       </thead>
 
       <tbody>
-      <tr>
-        <td class="center-align tabela">Veiculo</td>
-        <td class="center-align ">NLL-2245</td>
-        <td class="center-align"><img src="/img/error.svg" alt="" class="imgAlert" ></td>
-      </tr>
-      <tr>
-        <td class="center-align tabela">NF</td>
-        <td class="center-align">INDRA LTDA</td>
-        <td class="center-align"><img src="/img/ok.svg" alt="" class="imgAlert"></td>
-      </tr>
-      <tr>
-        <td class="center-align tabela">NF</td>
-        <td class="center-align">LOJA DO JOÃO</td>
-        <td class="center-align"><img src="/img/alerta.svg" alt="" class="imgAlert"></td>
-      </tr>
-      <tr>
-        <td class="center-align tabela">PLACA</td>
-        <td class="center-align">JKS-5444</td>
-        <td class="center-align"><img src="/img/ok.svg" alt="" class="imgAlert"></td>
-      </tr>
-      <tr>
-        <td class="center-align tabela">NF</td>
-        <td class="center-align">LOJA DO JOÃO</td>
-        <td class="center-align"><img src="/img/alerta.svg" alt="" class="imgAlert"></td>
-      </tr>
+        <tr ng-repeat="item in vm.items">
+          <td class="center-align tabela">{{item.tipo}}</td>
+          <td class="center-align ">{{item.tipo == 'NF-e' ? '. . .':''}} {{item.dados.slice(-8)}}</td>
+          <td class="center-align"><img ng-src="/img/{{item.status}}.svg" alt="" class="imgAlert"></td>
+        </tr>
       </tbody>
     </table>
     <br><br>
     <div class="row">
       <div class="col s12 m12 l2 center-align">
-        <a class="waves-effect waves-light btn-large red">Verificar</a>      </div>
+        <a class="waves-effect waves-light btn-large red">Verificar</a> </div>
     </div>
-
   </ion-content>
 </ion-view>

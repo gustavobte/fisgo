@@ -1,0 +1,14 @@
+[
+    {
+        "placa": "ABC-1234",
+        "marca":"volkswagen",
+        "modelo": "GOL",
+        "ano": "2004"
+    },
+    {
+        "placa": "DFE-4321",
+        "marca":"Ferrari",
+        "modelo": "F12",
+        "ano": "2016"
+    }
+]
