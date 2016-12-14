@@ -25,5 +25,7 @@
         function getItems() {
             return vm.items;
         }
+
+
     }
 })();

@@ -20,8 +20,11 @@
       vm.items = LeitorService.getItems();
     }
 
-    vm.getItems();
+    vm.telaLeitor = function () {
+      $location.path('/app/leitor');
+    };
 
+    vm.getItems();
   }
 })();
 
