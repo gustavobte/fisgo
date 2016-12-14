@@ -10,10 +10,12 @@
     function LeitorController(LeitorService) {
         var vm = this;
 
+        vm.resultadoLeitor = {"status": "alerta", "dados":""};
+
         vm.leitorBarcode = function () {
             cordova.plugins.barcodeScanner.scan(
                 function (result) {
-                    vm.resultadoLeitor = result.text;
+                    vm.resultadoLeitor.dados = result.text;
                 },
                 function (error) {
                     console("Scanning failed: " + error);

@@ -10,8 +10,6 @@
   function AutuacaoController($location, LeitorService) {
     var vm = this;
 
-    vm.items = [];
-
     vm.newItem = function () {
       $location.path('/app/leitor');
     };

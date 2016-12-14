@@ -8,9 +8,7 @@
         <a class="waves-effect waves-light btn-large blue darken-2" ng-click="vm.telaLeitor()"><i class="material-icons left">playlist_add</i>Adicionar Documento</a>
       </div>
     </div>
-    {{vm.items}}
-    <br><br>
-
+    
     <table class="striped bordered highlight">
       <thead>
         <tr>
@@ -20,31 +18,11 @@
         </tr>
       </thead>
 
-      <tbody>
+      <tbody ng-repeat="item in vm.items">
         <tr>
           <td class="center-align tabela">Veiculo</td>
-          <td class="center-align ">NLL-2245</td>
-          <td class="center-align"><img src="/img/error.svg" alt="" class="imgAlert"></td>
-        </tr>
-        <tr>
-          <td class="center-align tabela">NF</td>
-          <td class="center-align">INDRA LTDA</td>
-          <td class="center-align"><img src="/img/ok.svg" alt="" class="imgAlert"></td>
-        </tr>
-        <tr>
-          <td class="center-align tabela">NF</td>
-          <td class="center-align">LOJA DO JOÃO</td>
-          <td class="center-align"><img src="/img/alerta.svg" alt="" class="imgAlert"></td>
-        </tr>
-        <tr>
-          <td class="center-align tabela">PLACA</td>
-          <td class="center-align">JKS-5444</td>
-          <td class="center-align"><img src="/img/ok.svg" alt="" class="imgAlert"></td>
-        </tr>
-        <tr>
-          <td class="center-align tabela">NF</td>
-          <td class="center-align">LOJA DO JOÃO</td>
-          <td class="center-align"><img src="/img/alerta.svg" alt="" class="imgAlert"></td>
+          <td class="center-align ">{{item.dados}}</td>
+          <td class="center-align"><img ng-src="/img/{{item.status}}.svg" alt="" class="imgAlert"></td>
         </tr>
       </tbody>
     </table>
