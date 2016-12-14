@@ -19,7 +19,7 @@
       </thead>
 
       <tbody>
-        <tr ng-repeat="item in vm.items">
+        <tr ng-repeat="item in vm.items" class="item-remove-animate">
           <td class="center-align tabela">{{item.tipo}}</td>
           <td class="center-align ">{{item.tipo == 'NF-e' ? '. . .':''}} {{item.dados.slice(-8)}}</td>
           <td class="center-align"><img ng-src="/img/{{item.status}}.svg" alt="" class="imgAlert"></td>
@@ -27,6 +27,21 @@
       </tbody>
     </table>
     <br><br>
+
+    <ion-list >
+      <ion-item class="item-remove-animate" ng-repeat="item in vm.items">
+
+        Tipo:  {{item.tipo}} |  {{item.tipo == 'NF-e' ? '. . .':''}} {{item.dados.slice(-8)}}  |  <img ng-src="/img/{{item.status}}.svg" alt="" class="imgAlert">
+
+
+        <ion-option-button class="button-assertive" ng-click="vm.ItemDelete(item)">
+          Excluir
+        </ion-option-button>
+        <ion-reorder-button class="ion-navicon" on-reorder="vm.moveItem(item, $fromIndex, $toIndex)"></ion-reorder-button>
+      </ion-item>
+    </ion-list>
+
+
     <div class="row">
       <div class="col s12 m12 l2 center-align">
         <a class="waves-effect waves-light btn-large red" ng-click="vm.verificar()">Verificar</a> </div>

@@ -43,4 +43,6 @@
   font-size: 19px;
   font-style: normal;
 }
-
+body {
+  cursor: url('http://ionicframework.com/img/finger.png'), auto;
+}

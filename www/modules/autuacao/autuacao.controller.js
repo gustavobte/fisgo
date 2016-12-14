@@ -53,6 +53,16 @@
     }
 
     vm.getItems();
+
+    vm.data = {
+      showDelete: false
+    };
+
+
+    vm.ItemDelete = function(item) {
+      vm.items.splice(vm.items.indexOf(item), 1);
+    };
+
   }
 })();
 
