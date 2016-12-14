@@ -18,24 +18,24 @@
       vm.items = LeitorService.getItems();
     }
 
-    vm.filtraPendenciasPlacasByResultadoLeitor = function (placa, allPlacas) {
+    vm.filtraPlacasByResultadoLeitor = function (placa, allPlacas) {
       // Por enquanto o filtro por numDocumento é feito na seguinte função até implementar conexão com servidor
-      var pendencias = [];
+      var ocorrencia = {};
       for (var i = 0; i < allPlacas.length; i++) {
         if (allPlacas[i].placa == placa) {
           // Ver que vai precisar retornar neste ponto
-          pendencias.push(allPlacas[i]);
+          ocorrencia = allPlacas[i];
         }
       }
-      return pendencias;
+      return ocorrencia;
     }
 
     vm.buscaPendenciasPlaca = function (item) {
       // Verificar se o documento é NF-e ou Placa para buscar no banco certo
-      PendenciasService.buscaPendenciasPlaca(item.data).then(function (result) {
+      PendenciasService.buscaPendenciasPlaca(item.dados).then(function (result) {
         var allPlacas = result.data;
-        var pendencias = vm.filtraPendenciasPlacasByResultadoLeitor(item.data, allPlacas);
-        vm.items[item] = item.pendencias = pendencias;
+        var ocorrencia = vm.filtraPlacasByResultadoLeitor(item.dados, allPlacas);
+        vm.items[item] = item.ocorrencia = ocorrencia;
       }, function (response) {
         console.log("error: " + response);
       });
