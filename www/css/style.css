@@ -21,6 +21,17 @@
   width: 70px;
   z-index: 1;
 }
+
+.app-icon-barcode {
+  background-color: #fff;
+  background: url('/img/barcode.png') center;
+  background-size: cover;
+  border-radius: 1%;
+  height: 150px;
+  margin: 40px auto;
+  width: 150px;
+  z-index: 1;
+}
 .fd-user {
   background: url('/img/fd_login.jpg') center;
   height: 180px;
