@@ -1,46 +1,34 @@
 <ion-view view-title="Autuação - N°: 50504">
-
+  <ion-nav-buttons side="right">
+    <a ng-click="vm.onShowDeleteIcons()" ng-if="vm.items.length" class="ion-minus-circled button icon button-icon"></a>
+  </ion-nav-buttons>
   <ion-content>
     <br>
-
     <div class="row">
       <div class="col s12 m12 l2 center-align">
-        <a class="waves-effect waves-light btn-large blue darken-2" ng-click="vm.telaLeitor()"><i class="material-icons left">playlist_add</i>Adicionar Documento</a>
+        <a class="button button-positive icon-left ion-plus" ng-click="vm.telaLeitor()">Adicionar Documento</a>
       </div>
     </div>
-
-    <table class="striped bordered highlight">
-      <thead>
-        <tr>
-          <th data-field="id" class="center-align ">Tipo</th>
-          <th data-field="name" class="center-align">Identificação</th>
-          <th data-field="price" class="center-align">Verificação</th>
-        </tr>
-      </thead>
-    </table>
-    <ion-list>
-      <ion-item class="item-remove-animate" ng-repeat="item in vm.items">
-        <div class="list">
-          <a class="item item-icon-left" ng-click="item.status == 'error' ? vm.showModal(item) : ''">
-            {{item.tipo}}:
-            {{item.tipo == 'NF-e' ? '. . .':''}} {{item.dados.slice(-8)}}
-            <span class="item-note">
-              <img ng-src="/img/{{item.status}}.svg" alt="" class="imgAlert">
-             </span>
-          </a>
-        </div>
-        <ion-option-button class="button-assertive" ng-click="vm.ItemDelete(item)">
-          Excluir
-        </ion-option-button>
-        <ion-reorder-button class="ion-navicon" on-reorder="vm.moveItem(item, $fromIndex, $toIndex)"></ion-reorder-button>
+    <ion-list show-delete="vm.showDelete">
+      <ion-item ng-repeat="item in vm.items" type="item-text-wrap" ng-click="item.status == 'error' ? vm.showModal(item) : ''"
+        class="item-thumbnail-left item-icon-right item-remove-animate item item-complex item-left-editable item-right-editable">
+        <ion-delete-button ng-click="vm.ItemDelete(item)" class="ion-minus-circled"></ion-delete-button><img ng-src="/img/{{item.status}}.svg" />
+        <h2>Nº documento: {{item.tipo == 'NF-e' ? '. . .':''}} {{item.dados.slice(-8)}}</h2>
+        <p>Tipo: {{item.tipo}}</p>
       </ion-item>
     </ion-list>
+    <div ng-if="!vm.items.length" class="container">
+      <div class="row">
+        <div class="col">
+          <p>Nenhum registro adicionado.</p>
+        </div>
+      </div>
+    </div>
     <div class="row">
       <div class="col s12 m12 l2 center-align">
         <a class="waves-effect waves-light btn-large red" ng-click="vm.verificar()" ng-disabled="!vm.items.length > 0">Verificar</a>        </div>
     </div>
   </ion-content>
-</ion-view>
 
 <script id="templates/modal.html" type="text/ng-template">
       <ion-modal-view>
@@ -68,3 +56,4 @@
         </ion-content>
       </ion-modal-view>
     </script>
+</ion-view>

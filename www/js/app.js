@@ -1,6 +1,6 @@
-    angular
-        .module('fisgo', ['ionic', 'ui.utils.masks'])
-        .run(Run);
+angular
+    .module('fisgo', ['ionic', 'ui.utils.masks'])
+    .run(Run);
 
 function Run($ionicPlatform) {
     $ionicPlatform.ready(function () {
@@ -15,6 +15,5 @@ function Run($ionicPlatform) {
         if (window.StatusBar) {
             StatusBar.styleDefault();
         }
-
     })
 }

@@ -10,6 +10,12 @@
   function AutuacaoController($location, LeitorService, OcorrenciasService, $ionicModal, $scope) {
     var vm = this;
 
+    vm.showDelete = false;
+
+    vm.onShowDeleteIcons = function () {
+      vm.showDelete = !vm.showDelete;
+    };
+
     vm.telaLeitor = function () {
       $location.path('/app/leitor');
     }
@@ -19,17 +25,31 @@
     }
 
     vm.filtraOcorrenciaPlacas = function (placa, allPlacas) {
-      // Por enquanto o filtro por numDocumento é feito na seguinte função até implementar conexão com servidor
       for (var i = 0; i < allPlacas.length; i++) {
         if (allPlacas[i].placa == placa) {
-          // Ver que vai precisar retornar neste ponto
           return allPlacas[i];
         }
       }
     }
 
+    vm.filtraNfe = function (nfe, allNfes) {
+      for (var i = 0; i < allNfes.length; i++) {
+        if (allNfes[i].NFe.infNFe["-Id"].replace('NFe', '') == nfe) {
+          return allNfes[i];
+        }
+      }
+    }
+
+    vm.filtraOcorrenciaNfe = function (nfe, allNfes) {
+      for (var i = 0; i < allNfes.length; i++) {
+        var cnpj = allNfes[i].cnpj.replace(/\./g, '').replace(/\//g, '').replace(/\-/g, '');
+        if (cnpj == nfe) {
+          return allNfes[i];
+        }
+      }
+    }
+
     vm.buscaOcorrenciasPlaca = function (item) {
-      // Verificar se o documento é NF-e ou Placa para buscar no banco certo
       OcorrenciasService.buscaOcorrenciasPlaca(item.dados).then(function (result) {
         var ocorrencia = vm.filtraOcorrenciaPlacas(item.dados, result.data);
         item.ocorrencia = ocorrencia;
@@ -42,13 +62,31 @@
       });
     }
 
+    vm.buscaOcorrenciasNfe = function (item) {
+      OcorrenciasService.buscaNFES(item.dados).then(function (result) {
+        var nfe = vm.filtraNfe(item.dados, result.data);
+        var cnpj = nfe.NFe.infNFe.emit.CNPJ;
+        OcorrenciasService.buscaOcorrenciasCNPJ(cnpj).then(function (result) {
+          var ocorrencia = vm.filtraOcorrenciaNfe(cnpj, result.data);
+          item.ocorrencia = ocorrencia;
+          vm.items[item] = item;
+          var statusOcorrencia = angular.equals(vm.items[item].ocorrencia, undefined) ? 'ok' : 'error';
+          item.status = statusOcorrencia;
+          vm.items[item] = item;
+        }, function (response) {
+          console.log("error: " + response);
+        });
+      }, function (response) {
+        console.log("error: " + response);
+      });
+    }
+
     vm.verificar = function () {
       for (var i = 0; i < vm.items.length; i++) {
         if (vm.items[i].tipo == 'Veiculo') {
           vm.buscaOcorrenciasPlaca(vm.items[i])
-          console.log(vm.items[i])
         } else if (vm.items[i].tipo == 'NF-e') {
-          console.log("Implementando...")
+          vm.buscaOcorrenciasNfe(vm.items[i])
         }
       }
     }
@@ -60,7 +98,6 @@
         divida += pendencia.valor;
       }
       return divida;
-
     }
 
     vm.showModal = function (item) {
