@@ -19,5 +19,12 @@
         "documento": "DOB-6548",
         "fiscal": "Ferran Gonzalez",
         "data": "12/12/2016"
+    },
+    {
+        "id": "4",
+        "autuado": "Ferran Rosa da Silva",
+        "documento": "DOB-6548",
+        "fiscal": "Gustavo Silva",
+        "data": "12/12/2016"
     }
 ]

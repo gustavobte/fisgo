@@ -17,21 +17,21 @@
           <th data-field="price" class="center-align">Verificação</th>
         </tr>
       </thead>
-
-      <tbody>
-        <tr ng-repeat="item in vm.items" class="item-remove-animate">
-          <td class="center-align tabela">{{item.tipo}}</td>
-          <td class="center-align ">{{item.tipo == 'NF-e' ? '. . .':''}} {{item.dados.slice(-8)}}</td>
-          <td class="center-align"><img ng-src="/img/{{item.status}}.svg" alt="" class="imgAlert"></td>
-        </tr>
-      </tbody>
     </table>
-    <br><br>
-
     <ion-list >
       <ion-item class="item-remove-animate" ng-repeat="item in vm.items">
+        <div class="list">
+          <a class="item item-icon-left" href="#">
+            {{item.tipo}}:
+            {{item.tipo == 'NF-e' ? '. . .':''}} {{item.dados.slice(-8)}}
+            <span class="item-note">
+              <img ng-src="/img/{{item.status}}.svg" alt="" class="imgAlert">
+             </span>
+          </a>
+        </div>
 
-        Tipo:  {{item.tipo}} |  {{item.tipo == 'NF-e' ? '. . .':''}} {{item.dados.slice(-8)}}  |  <img ng-src="/img/{{item.status}}.svg" alt="" class="imgAlert">
+
+        <!--Tipo:  {{item.tipo}} |  {{item.tipo == 'NF-e' ? '. . .':''}} {{item.dados.slice(-8)}}  |  <img ng-src="/img/{{item.status}}.svg" alt="" class="imgAlert">-->
 
 
         <ion-option-button class="button-assertive" ng-click="vm.ItemDelete(item)">
