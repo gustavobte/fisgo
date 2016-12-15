@@ -18,10 +18,10 @@
         </tr>
       </thead>
     </table>
-    <ion-list >
+    <ion-list>
       <ion-item class="item-remove-animate" ng-repeat="item in vm.items">
         <div class="list">
-          <a class="item item-icon-left" href="#">
+          <a class="item item-icon-left" ng-click="item.status == 'error' ? vm.showModal(item) : ''">
             {{item.tipo}}:
             {{item.tipo == 'NF-e' ? '. . .':''}} {{item.dados.slice(-8)}}
             <span class="item-note">
@@ -29,22 +29,42 @@
              </span>
           </a>
         </div>
-
-
-        <!--Tipo:  {{item.tipo}} |  {{item.tipo == 'NF-e' ? '. . .':''}} {{item.dados.slice(-8)}}  |  <img ng-src="/img/{{item.status}}.svg" alt="" class="imgAlert">-->
-
-
         <ion-option-button class="button-assertive" ng-click="vm.ItemDelete(item)">
           Excluir
         </ion-option-button>
         <ion-reorder-button class="ion-navicon" on-reorder="vm.moveItem(item, $fromIndex, $toIndex)"></ion-reorder-button>
       </ion-item>
     </ion-list>
-
-
     <div class="row">
       <div class="col s12 m12 l2 center-align">
-        <a class="waves-effect waves-light btn-large red" ng-click="vm.verificar()" ng-disabled="!vm.items.length > 0">Verificar</a> </div>
+        <a class="waves-effect waves-light btn-large red" ng-click="vm.verificar()" ng-disabled="!vm.items.length > 0">Verificar</a>        </div>
     </div>
   </ion-content>
 </ion-view>
+
+<script id="templates/modal.html" type="text/ng-template">
+      <ion-modal-view>
+        <ion-header-bar class="bar bar-header bar-positive">
+          <h1 class="title">Detalhes</h1>
+          <button class="button button-clear button-primary" ng-click="modal.hide()">Voltar</button>
+        </ion-header-bar>
+        <ion-content class="padding">
+          <div class="list">
+            <label class="item item-input">
+              <span class="input-label">Tipo: {{vm.detalhesItem.tipo}}</span>
+            </label>
+            <label class="item item-input">
+              <span class="input-label">Nº documento: {{vm.detalhesItem.dados}}</span>
+            </label>
+            <p>Pendencias</p>
+            <label class="item item-input" ng-repeat="pendencia in vm.detalhesItem.ocorrencia.pendencias">
+              <span class="input-label">
+                <b>Data:</b> {{pendencia.data}}<br/>
+                <b>Tipo:</b> {{pendencia.tipo}}<br/>
+                <b>Valor:</b> {{pendencia.valor}}<br/>
+            </label>
+            <span>{{vm.totalDivida}}</span>
+          </div>
+        </ion-content>
+      </ion-modal-view>
+    </script>

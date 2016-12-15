@@ -5,9 +5,9 @@
     .module('fisgo')
     .controller('AutuacaoController', AutuacaoController);
 
-  AutuacaoController.$inject = ['$location', 'LeitorService', 'OcorrenciasService'];
+  AutuacaoController.$inject = ['$location', 'LeitorService', 'OcorrenciasService', '$ionicModal', '$scope'];
 
-  function AutuacaoController($location, LeitorService, OcorrenciasService) {
+  function AutuacaoController($location, LeitorService, OcorrenciasService, $ionicModal, $scope) {
     var vm = this;
 
     vm.telaLeitor = function () {
@@ -53,16 +53,36 @@
       }
     }
 
-    vm.getItems();
+    vm.calculaTotalDivida = function (pendencias) {
+      var divida = 0;
+      for (var i = 0; i < pendencias.length; i++) {
+        var pendencia = pendencias[i];
+        divida += pendencia.valor;
+      }
+      return divida;
+
+    }
+
+    vm.showModal = function (item) {
+      vm.detalhesItem = item;
+      vm.totalDivida = vm.calculaTotalDivida(item.ocorrencia.pendencias)
+      $scope.modal.show();
+    }
+
+    $ionicModal.fromTemplateUrl('templates/modal.html', {
+      scope: $scope
+    }).then(function (modal) {
+      $scope.modal = modal;
+    });
 
     vm.data = {
       showDelete: false
     };
 
-
-    vm.ItemDelete = function(item) {
+    vm.ItemDelete = function (item) {
       vm.items.splice(vm.items.indexOf(item), 1);
     };
 
+    vm.getItems();
   }
 })();
